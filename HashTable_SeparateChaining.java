@@ -1,3 +1,113 @@
+<<<<<<< HEAD
+http://www.sanfoundry.com/java-program-implement-hash-tables-chaining-list-heads/
+
+class LinkedHashEntry {
+    
+    String key;
+    int value;
+    LinkedHashEntry next;
+
+    public LinkedHashEntry(String k, int v) {
+        key = k;
+        value = v;
+    }
+}
+
+class HashTable {
+
+    private int TABLE_SIZE;
+    private int size;
+    private LinkedHashEntry[] table;
+
+    public HashTable(int s) {
+        TABLE_SIZE = s;
+        size = 0;
+        table = new LinkedHashEntry[TABLE_SIZE];
+        for(int i=0; i<table.length; i++)
+            table[i] = null;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void clear() {
+        for(int i=0; i<table.length; i++)
+            table[i] = null;
+    }
+
+    public int hashFunc(String key) {
+        int hashval = key.hashcode();
+        hashval%=TABLE_SIZE;
+        if(hashval<0)
+            hashval+=TABLE_SIZE;
+        return hashval;
+    }
+
+    public void put(String key, int value) {
+        int index = hashFunc(key);
+
+        if(LinkedHashEntry[index]==null)
+            LinkedHashEntry[index] = new LinkedHashEntry(key, value);
+        else {
+            LinkedHashEntry curr = LinkedHashEntry[index];
+            while(curr.next!=null && !curr.key.equals(key))
+                curr = curr.next;
+            if(curr.key.equals(key))
+                curr.value = value;
+            else
+                curr.next = new LinkedHashEntry(key, value);
+        }
+        size++;
+    }
+
+    public int get(String key) {
+        int index = hashFunc(key);
+
+        if(LinkedHashEntry[index]==null)
+            return -1;
+        else {
+            LinkedHashEntry curr = LinkedHashEntry[index];
+            while(curr!=null && !curr.key.equals(key))
+                curr = curr.next;
+            if(curr==null)
+                return -1;
+            return curr.value;
+        }
+    }
+
+    public void delete(String key) {
+        int index = hashFunc(key);
+
+        if(LinkedHashEntry[index]!=null) {
+            LinkedHashEntry prev = null;
+            LinkedHashEntry curr = LinkedHashEntry[index];
+
+            while(curr!=null && !curr.key.equals(key)) {
+                prev = curr;
+                curr = curr.next;
+            }
+            if(curr.key.equals(key)) {
+                if(prev==null)
+                    curr = curr.next;
+                else
+                    prev.next = curr.next;
+                size--;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+=======
+>>>>>>> efdafe9e8c74597bcfaaf5f773a006a58700c65b
 Separate Chaining
 
 From schoolbook java
