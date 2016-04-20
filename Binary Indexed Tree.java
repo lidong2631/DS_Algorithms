@@ -15,7 +15,7 @@ void updateBIT(int BITree[], int n, int index, int val) {
 
 	while(index<=n) {
 		BITree[index]+=val;					// add val to current node of BITree
-		index+=index & (-index);			// go to current node's parent
+		index+=index & (-index);			// go to current node's parent index&(-index) get last set bit
 	}
 }
 
