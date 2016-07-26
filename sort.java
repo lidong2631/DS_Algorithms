@@ -321,6 +321,29 @@ Worst case space complexity O(1) auxiliary
 
 Counting Sort:
 
+public void countSort(int[] arr) {
+    // Find max value in arr
+    int[] helper = new int[max+1];
+    int[] res = new int[arr.length];
+
+    for (int i = 0; i < arr.length; i++) {
+        helper[arr[i]]++;
+    }
+    for (int i = 1; i < res.length; i++) {
+        helper[i] += helper[i-1];
+    }
+    for (int i = arr.length - 1; i >= 0; i--) {
+        int tmp = arr[i];
+        res[helper[tmp]-1] = tmp;
+        helper[tmp] -= 1;
+    }
+    for (int i = 0; i < res.length; i++)
+        arr[i] = res[i];
+}
+
+
+
+
 public static int[] countingSort(int[] A) {
         int[] B = new int[A.length];
         // 假设A中的数据a'有，0<=a' && a' < k并且k=100
