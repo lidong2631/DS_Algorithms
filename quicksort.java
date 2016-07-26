@@ -1,3 +1,42 @@
+public void quicksort(int[] arr) {
+    recQuickSort(arr, 0, arr.length-1);
+}
+
+public void recQuickSort(int[] arr, int left, int right) {
+    if (left >= right) return;
+
+    int pivot = arr[right];
+    int p = partition(arr, left, right, pivot);
+    recQuickSort(arr, left, pivot - 1);
+    recQuickSort(arr, pivot + 1, right);
+}
+
+public void partition(int[] arr, int left, int right, int pivot) {
+    int l = left - 1, r = right;
+
+    while (true) {
+        while (l < right && arr[++l] < pivot)
+            ;
+        while (r > 0 && arr[--r] > pivot)
+            ;
+        if (l >= r)
+            break;
+        swap(arr, l, r);
+    }
+    swap(arr, l, right);
+    return l;
+}
+
+public void swap(int[] arr, int l, int r) {
+    int tmp = arr[l];
+    arr[l] = arr[r];
+    arr[r] = tmp;
+}
+
+
+
+
+
 class ArrayIns {
     private long[] theArray;
     private int nElems;
