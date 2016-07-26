@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 http://www.sanfoundry.com/java-program-implement-hash-tables-chaining-list-heads/
 
 class LinkedHashEntry {
@@ -105,6 +106,8 @@ class HashTable {
 
 
 
+=======
+>>>>>>> efdafe9e8c74597bcfaaf5f773a006a58700c65b
 Separate Chaining
 
 From schoolbook java

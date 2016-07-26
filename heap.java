@@ -37,6 +37,7 @@ heapsort runs in O(nlogn) time. Although it may be slightly slower than quicksor
 
 to the initial destribution of data. Certain arrangements of key values can reduce quicksort to slow O(n^2) time, whereas heapsort runs
 
+<<<<<<< HEAD
 in O(nlogn) time no matter how the data is distributed.
 
 
@@ -129,3 +130,6 @@ class Heap {
 		return true;
 	}
 }
+=======
+in O(nlogn) time no matter how the data is distributed.
+>>>>>>> efdafe9e8c74597bcfaaf5f773a006a58700c65b
