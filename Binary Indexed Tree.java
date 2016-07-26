@@ -15,7 +15,7 @@ void updateBIT(int BITree[], int n, int index, int val) {
 
 	while(index<=n) {
 		BITree[index]+=val;					// add val to current node of BITree
-		index+=index & (-index);			// go to current node's parent
+		index+=index & (-index);			// go to current node's parent index&(-index) get last set bit
 	}
 }
 
@@ -31,6 +31,9 @@ int getSUm(int BITree[], int index) {
 	return sum;
 }
 
-we can get Range Sum in logarithmic time by applying getSum(r)-getSum(l-1)
+The section sums are defined in such a way that queries and modifications to the table are executed in asymptotically equivalent 
+time - O(\log n) in the worst case
+The initial process of building the Fenwick tree over a table of values runs in O(n \log n) time
 
+we can get Range Sum in logarithmic time by applying getSum(r)-getSum(l-1)
 http://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
