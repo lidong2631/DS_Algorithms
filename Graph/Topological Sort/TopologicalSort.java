@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 public class TopologicalSort {
 	public static void main(String[] args) {
 		Graph g = new Graph(6);
@@ -12,19 +11,4 @@ public class TopologicalSort {
 		System.out.println("Following is a Topological Sort of the given graph:");
 		g.topologicalSort();
 	}
-=======
-public class TopologicalSort {
-	public static void main(String[] args) {
-		Graph g = new Graph(6);
-		g.addEdge(5, 2);
-		g.addEdge(5, 0);
-		g.addEdge(4, 0);
-		g.addEdge(4, 1);
-		g.addEdge(2, 3);
-		g.addEdge(3, 1);
-
-		System.out.println("Following is a Topological Sort of the given graph:");
-		g.topologicalSort();
-	}
->>>>>>> efdafe9e8c74597bcfaaf5f773a006a58700c65b
 }
